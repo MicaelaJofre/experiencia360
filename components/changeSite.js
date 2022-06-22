@@ -83,8 +83,6 @@ AFRAME.registerComponent('change-site', {
 
                 livingContainer.setAttribute("class", "click")
                 livingContainer.setAttribute('visible', 'true')
-
-                document.querySelector("#camera").setAttribute("rotation", "-5 2330 0")
             }
 
 
