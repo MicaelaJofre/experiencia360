@@ -13,8 +13,10 @@ AFRAME.registerComponent('change-site', {
         let data = this.data;
         let el = this.el;
 
-
-        el.addEventListener("mouseenter", function () {
+        
+        el.addEventListener("mouseenter", function (e) {
+            e.preventDefault()
+            
             //icono de info
             let kitchen = document.querySelector('#kitchen')
 

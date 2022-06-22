@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="./aframe-master/dist/aframe-v1.3.0.min.js"></script>
     <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -59,10 +59,9 @@
         </a-sky>
 
         <!-- Cámara + Cursor. -->
-        <a-camera id="camera">
+        <a-camera wasd-controls-enabled="false" look-controls>
             <a-cursor raycaster="objects: .click, .info"></a-cursor>
         </a-camera>
-
         <!-- Texto -->
 
         <!-- Texto living -->
