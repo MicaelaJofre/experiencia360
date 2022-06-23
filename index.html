@@ -14,6 +14,9 @@
             <img id="soundImg" sounding="false" src="./img/volumenOff.png" alt="volumen" />
         </button>
     </div>
+    <div class="containerScene">
+        <p id="scene-text">Living</p>
+    </div>
 
     <!-- Comienzo de la escena-->
     <a-scene>
@@ -60,7 +63,7 @@
 
         <!-- Cámara + Cursor. -->
         <a-camera wasd-controls-enabled="false" look-controls>
-            <a-cursor raycaster="objects: .click, .info"></a-cursor>
+            <a-cursor raycaster="objects: .click, .info, .cavaButton"></a-cursor>
         </a-camera>
         <!-- Texto -->
 
@@ -72,7 +75,7 @@
             <a-sphere 
                 radius=".5f"
                 class="click"
-                change-site="img: #living; sound: #antino"
+                change-site="img: #living; sound: #antino; scene: Living"
                 sound="on: mouseenter; src: #magic; poolSize: 2"
                 visible="false">
             </a-sphere>
@@ -110,7 +113,7 @@
             <a-sphere 
                 radius=".5f"
                 class="click"
-                change-site="img: #cava; sound: #piano"
+                change-site="img: #cava; sound: #piano; scene: Cava"
                 sound="on: mouseenter; src: #magic; poolSize: 2"
                 visible="false">
             </a-sphere>
@@ -162,18 +165,19 @@
             scale="1 1 1"
             current="null"
             geometry="primitive: plane; width: 3.5; height: 6"
-            material="color: #edede9; shader: flat; transparent: false;"
-            rotation="0 90 0">
+            material="color: #222; shader: flat; transparent: false; alphaTest: 0.5"
+            rotation="0 0 0">
 
             <!-- cartel-->
-            <!-- Titulo cartel-->
+            <!-- Titulo cartel-->    
             <a-text 
                 id="title" 
                 value="" 
                 font="roboto" 
                 width="6" 
                 position="-1.5 2.75 0" 
-                color="#78a2d2">
+                color="#78a2d2"
+                material="alphaTest: 0.5">
             </a-text>
             <!-- Img cartel-->
             <a-image 
@@ -186,12 +190,13 @@
             <a-text 
                 id="text"
                 value=""
-                color="#666"
+                color="#fff"
                 width="3.3" 
                 height="1" 
                 font="roboto" 
                 align="center"
-                position="0 -1.7 0">
+                position="0 -1.7 0"
+                material="alphaTest: 0.5">
             </a-text>
         </a-entity>
 
@@ -210,7 +215,7 @@
                 position="-0.5 2.2 0"
                 width="3.5"
                 height=".5"
-                class="info"
+                class="info cavaButton"
                 show-info="image: #infoPanel">
                 <a-text 
                     value="Cabernet" 
@@ -225,7 +230,7 @@
                 position="-0.5 1.6 0" 
                 width="3.5" 
                 height=".5"
-                class="info"
+                class="info cavaButton"
                 show-info="image: #infoPanel">
                 <a-text  
                     value="Malbec" 
@@ -240,7 +245,7 @@
                 position="-0.5 1 0"
                 width="3.5"
                 height=".5"
-                class="info"
+                class="info cavaButton"
                 show-info="image: #infoPanel">
                 <a-text  
                     value="Pinot" 
@@ -255,7 +260,7 @@
                 position="-0.5 .4 0"
                 width="3.5"
                 height=".5"
-                class="info"
+                class="info cavaButton"
                 show-info="image: #infoPanel">
                 <a-text  
                     value="Variedad de reservas" 

@@ -15,6 +15,19 @@ AFRAME.registerComponent('show-info', {
         let containerH = 6;
         let textPos = -1.7;
         let textH = 2.6;
+        var color = this.color;
+
+        //evento boton del menu cava
+        var cavaButton = this.cavaButton = document.querySelectorAll('.cavaButton')
+            
+        this.onMouseEnter = this.onMouseEnter.bind(this);
+        this.onMouseLeave = this.onMouseLeave.bind(this);
+        for (let i = 0; i < cavaButton.length; ++i) {
+            cavaButton[i].addEventListener('mouseenter', this.onMouseEnter);
+            cavaButton[i].addEventListener('mouseleave', this.onMouseLeave);
+        }
+
+        
 
         let info = [
             {
@@ -140,5 +153,34 @@ AFRAME.registerComponent('show-info', {
             }
             
         })
-    }
+    },
+    onMouseEnter: function (evt) {
+            
+        let button = this.cavaButton
+        
+        for (let i = 0; i < button.length; ++i) {
+            
+            if (evt.target === button[i]) {
+                this.color = evt.target.getAttribute('material').color
+                console.log(this.color);
+                evt.target.setAttribute('material', 'color', '#046de7');
+                evt.target.object3D.scale.set(1.2, 1.2, 1.2);
+                this.el.addState('hover');
+                }
+        }
+        
+        },
+
+    onMouseLeave: function (evt) {
+        let button = this.cavaButton
+        if (this.el.is('hover')) {
+            console.log(this.color);
+            evt.target.object3D.scale.set(1, 1, 1);
+            evt.target.setAttribute('material', 'color', this.color);
+        }
+        this.el.removeState('hover');
+            
+        
+        },
+
 });

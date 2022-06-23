@@ -6,6 +6,9 @@ AFRAME.registerComponent('change-site', {
         },
         sound: {
             type: 'string'
+        },
+        scene: {
+            type: 'string'
         }
     },
 
@@ -13,13 +16,17 @@ AFRAME.registerComponent('change-site', {
         let data = this.data;
         let el = this.el;
 
+        //nombre de la escena
+        let sceneText = document.querySelector('#scene-text')
+        
         
         el.addEventListener("mouseenter", function (e) {
             e.preventDefault()
+            //nombre de la escena
+            sceneText.textContent = data.scene
             
             //icono de info
             let kitchen = document.querySelector('#kitchen')
-
 
             let imag360 = document.querySelector("#imag360");
             imag360.setAttribute("src", data.img);
