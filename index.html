@@ -61,8 +61,10 @@
             data-sounding="false">
         </a-sky>
 
+        
+
         <!-- Cámara + Cursor. -->
-        <a-camera wasd-controls-enabled="false" look-controls>
+        <a-camera wasd-controls-enabled="false" look-controls id="cam" camera="zoom: 1" look-controls="reverseMouseDrag: true">
             <a-cursor raycaster="objects: .click, .info, .cavaButton"></a-cursor>
         </a-camera>
         <!-- Texto -->
@@ -176,7 +178,7 @@
                 font="roboto" 
                 width="6" 
                 position="-1.5 2.75 0" 
-                color="#78a2d2"
+                color="#fff"
                 material="alphaTest: 0.5">
             </a-text>
             <!-- Img cartel-->
@@ -211,7 +213,7 @@
             <!-- Titulo menu cava-->
             <a-plane
                 id="cabernet"
-                color="#b5838d"
+                color="#5d2a42"
                 position="-0.5 2.2 0"
                 width="3.5"
                 height=".5"
@@ -226,7 +228,7 @@
             </a-plane>
             <a-plane 
                 id="malbec"
-                color="#e63946"     
+                color="#df7373"
                 position="-0.5 1.6 0" 
                 width="3.5" 
                 height=".5"
@@ -241,7 +243,7 @@
             </a-plane>
             <a-plane
                 id="pinot"
-                color="#023047"
+                color="#b5838d"
                 position="-0.5 1 0"
                 width="3.5"
                 height=".5"
@@ -279,6 +281,7 @@
     <script src="./components/showInfo.js"></script>
     <script src="./components/showMenu.js"></script>
     <script src="./components/toogleSound.js"></script>
+    <script src="./components/cam-zoom.js"></script>
 </body>
 
 </html>

@@ -84,7 +84,7 @@ AFRAME.registerComponent('show-info', {
                     if(evt.target.is("clicked"))
                         evt.target.setAttribute('material', 'color', button.color);
                     else {
-                        evt.target.setAttribute('material', 'color', 'red')
+                        evt.target.setAttribute('material', 'color', 'black')
                         evt.target.addState("clicked")
                     }
                         
@@ -195,6 +195,7 @@ AFRAME.registerComponent('show-info', {
         })
 
     },
+    //cambio color de los botones del menu de la cava
     onMouseEnter: function (evt) {
             
         let infoPanel = this.infoPanel
@@ -205,7 +206,7 @@ AFRAME.registerComponent('show-info', {
             let button = buttons[i]
             if (evt.target === button.el) {
                 if(current !== evt.target.id) {
-                    evt.target.setAttribute('material', 'color', '#046de7');
+                    evt.target.setAttribute('material', 'color', '#f6cb52');
                     evt.target.object3D.scale.set(1.2, 1.2, 1.2);
                 }
             }
