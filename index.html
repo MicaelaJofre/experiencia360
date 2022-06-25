@@ -17,12 +17,13 @@
     <div class="containerScene">
         <p id="scene-text">Living</p>
     </div>
-    <div class="iconoWindow">
+    <div id="windowOpen" class="iconoWindow">
         <img id="window" src="./img/icons8-windows-11-100 (1).png" alt="window" />
     </div>
-    <div class="containerModal">
+    <div class="containerModal" id="containerModal">
         <div class="modal">
-            <img id="livingImg" src="./img/livingImg.jpeg" alt="living" />
+            <img id="livingImg" src=" ./img/livingImg.jpeg"
+                alt="living" />
             <img id="cavaImg" src="./img/cavaImg.jpeg" alt="cava" />
         </div>
     </div>
@@ -34,12 +35,12 @@
         <!--colocar todos los recursos en assets-->
         <a-assets>
             <!-- Audio -->
-            <audio 
+            <a-sound 
                 id="magic"
                 src="./audio/349465__vr__magic-bell.wav" 
                 preload="auto"
-                volume="1">
-            </audio>
+                volume=".2">
+            </a-sound>
             <a-sound 
                 id="antino"
                 src="./audio/piano1.wav"
@@ -58,6 +59,7 @@
             <img id="arrow" src="./img/arrow.png">
             <img id="shadow" src="./img/shadow.png">
             <img id="icono" src="./img/icono1.png">
+            <img id="arrowCava" src="./img/arrowCava.png">
         </a-assets>
 
         <!-- Imagen de 360 ​​grados. -->
@@ -65,7 +67,7 @@
             id="imag360" 
             radio="-4" 
             src="#living" 
-            sound="src: #antino; loop: true"
+            sound="src: #antino; loop: true; volume: .2"
             data-sounding="false">
         </a-sky>
 
@@ -73,7 +75,9 @@
 
         <!-- Cámara + Cursor. -->
         <a-camera wasd-controls-enabled="false" look-controls id="cam" camera="zoom: 1" look-controls="reverseMouseDrag: true">
-            <a-cursor raycaster="objects: .click, .info, .cavaButton"></a-cursor>
+            <a-cursor raycaster="objects: .click, .info, .cavaButton"
+                geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.03"
+                material="color: #fff; side: double" ></a-cursor>
         </a-camera>
         <!-- Texto -->
 
@@ -86,7 +90,7 @@
                 radius=".5f"
                 class="click"
                 change-site="img: #living; sound: #antino; scene: Living"
-                sound="on: mouseenter; src: #magic; poolSize: 2"
+                sound="on: mouseenter; src: #magic;volume:.2; poolSize: 2"
                 visible="false">
             </a-sphere>
             <a-entity 
@@ -124,7 +128,7 @@
                 radius=".5f"
                 class="click"
                 change-site="img: #cava; sound: #piano; scene: Cava"
-                sound="on: mouseenter; src: #magic; poolSize: 2"
+                sound="on: mouseenter; src: #magic;volume:.2; poolSize: 2"
                 visible="false">
             </a-sphere>
             <a-entity 
@@ -218,6 +222,16 @@
             scale="1 1 1" 
             rotation="0 180 0">
 
+            <!-- Flecha menu cava-->
+            <a-image 
+                class="arrowCava" 
+                position="-2.15 2.2 0"
+                width="1" heigth=".5" 
+                scale=".5 .5 .5" 
+                src="#arrowCava" 
+                visible="false">
+            </a-image>
+
             <!-- Titulo menu cava-->
             <a-plane
                 id="cabernet"
@@ -234,6 +248,12 @@
                     align="center">
                 </a-text>
             </a-plane>
+
+            <!-- Flecha menu cava-->
+            <a-image class="arrowCava" position="-2.15 1.6 0" width="1" heigth=".5" scale=".5 .5 .5" src="#arrowCava"
+                visible="false">
+            </a-image>
+
             <a-plane 
                 id="malbec"
                 color="#df7373"
@@ -249,6 +269,12 @@
                     align="center">
                 </a-text>
             </a-plane>
+
+            <!-- Flecha menu cava-->
+            <a-image class="arrowCava" position="-2.15 1 0" width="1" heigth=".5" scale=".5 .5 .5" src="#arrowCava"
+                visible="false">
+            </a-image>
+
             <a-plane
                 id="pinot"
                 color="#b5838d"
@@ -264,6 +290,11 @@
                     align="center">
                 </a-text>
             </a-plane>
+
+            <!-- Flecha menu cava-->
+            <a-image class="arrowCava" position="-2.15 .4 -0.1" width="1" heigth=".5" scale=".5 .5 .5" src="#arrowCava" visible="false">
+            </a-image>
+
             <a-plane 
                 id="reserva"
                 color="#84a59d"
@@ -285,11 +316,12 @@
     </a-scene>
     <!-- Fin de la escena-->
 
-    <script src="./components/changeSite.js"></script>
+    <script type="module" src="./components/changeSite.js"></script>
     <script src="./components/showInfo.js"></script>
-    <script src="./components/showMenu.js"></script>
     <script src="./components/toogleSound.js"></script>
     <script src="./components/cam-zoom.js"></script>
+    <script type="module" src="./components/modal.js"></script>
+    <script type="module" src="./components/helper.js"></script>
 </body>
 
 </html>

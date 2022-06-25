@@ -17,6 +17,10 @@ AFRAME.registerComponent('show-info', {
         let textH = 2.6;
         var color = this.color;
         var infoPanel = this.infoPanel = document.querySelector('#infoPanel')
+
+
+        //icono de flecha en el menu de la cava
+        let arrowCava = document.querySelectorAll('.arrowCava')
         
         //evento boton del menu cava
         var cavaButtons =document.querySelectorAll('.cavaButton')
@@ -170,15 +174,28 @@ AFRAME.registerComponent('show-info', {
 
                     infoPanel.setAttribute('visible', 'false')
                     infoPanel.setAttribute('current', 'null')
+                    
+                    
+
                     for (let i = 0; i < buttons.length; i++) {
                         const button = buttons[i];
                         button.el.setAttribute("material", "color", button.color)
-                        
+                        //flechas del menu
+                        arrowCava[i].setAttribute('visible', 'false')
                     }
 
                 } else {
                     infoPanel.setAttribute('visible', 'true')
                     infoPanel.setAttribute('current', el.id)
+                    
+                    //flechas del menu
+                    for (let i = 0; i < buttons.length; i++) {
+                        const button = buttons[i];
+                        if (button.el.id == infoPanel.getAttribute('current')) {
+                            arrowCava[i].setAttribute('visible', 'true')
+                            button.el.object3D.scale.set(1, 1, 1);
+                        }
+                    }
                 }
             } else {
                 
@@ -187,9 +204,19 @@ AFRAME.registerComponent('show-info', {
                     if(button.el.id == infoPanel.getAttribute('current')){
                         let currentButton = document.querySelector("#" + infoPanel.getAttribute('current'))
                         currentButton.setAttribute("material", "color", button.color)
+                        //flechas del menu
+                        arrowCava[i].setAttribute('visible', 'false')
                     }
                 }
                 infoPanel.setAttribute('current', el.id)
+                //flechas del menu
+                for (let i = 0; i < buttons.length; i++) {
+                    const button = buttons[i];
+                    if (button.el.id == infoPanel.getAttribute('current')) { 
+                        arrowCava[i].setAttribute('visible', 'true')
+                        button.el.object3D.scale.set(1, 1, 1);
+                    }
+                }
             }
             
         })
