@@ -1,7 +1,7 @@
 .container{
     position: fixed;
     top: 2em;
-    right: 5em;
+    right: 2em;
     width: 3em;
     height: 3em;
     text-align: center;
@@ -67,16 +67,20 @@
     background-color: rgba(3, 3, 3, 0.89);
     visibility:hidden;
 }
+.containerModal p{
+    color: #fff;
+    font-size: 1em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding:1em;
+    font-weight: bold;
+    cursor: pointer;
+}
 .openModal{
     visibility:visible;
 }
 .modal{
-    position: fixed;
-    bottom: 6em;
-    left: 30em;
-    width: 25em;
-    height: 30em;
-    background-color: #fff;
+    width: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,14 +88,20 @@
     gap: 1em;
 }
 #livingImg{
-    border: 5px solid rgba(34, 34, 34, 0.815);
+    border: 6px solid rgba(75, 73, 73, 0.815);
     width: 19em;
     height: auto;
     cursor: pointer;
 }
 #cavaImg{
-    border: 5px solid rgba(34, 34, 34, 0.815);
+    border: 6px solid rgba(75, 73, 73, 0.815);
     width: 19em;
     height: auto;
     cursor: pointer;
+}
+#livingImg:hover{
+    border: 6px solid #fff;
+}
+#cavaImg:hover {
+    border: 6px solid #fff;
 }

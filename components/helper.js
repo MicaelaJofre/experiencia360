@@ -45,7 +45,8 @@ export function ChangeMap(data) {
     if (data.img === '#living' ) {
         //panel se borra si cambia de escena
         infoPanel.setAttribute('visible', 'false')
-        
+
+                
         //menu cava
         menuPanel.setAttribute('visible', 'false')
 

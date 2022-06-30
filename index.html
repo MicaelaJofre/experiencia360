@@ -21,6 +21,7 @@
         <img id="window" src="./img/icons8-windows-11-100 (1).png" alt="window" />
     </div>
     <div class="containerModal" id="containerModal">
+        <p id="windowClose">X</p>
         <div class="modal">
             <img id="livingImg" src=" ./img/livingImg.jpeg"
                 alt="living" />
@@ -74,10 +75,15 @@
         
 
         <!-- Cámara + Cursor. -->
-        <a-camera wasd-controls-enabled="false" look-controls id="cam" camera="zoom: 1" look-controls="reverseMouseDrag: true">
+        <a-camera 
+            wasd-controls-enabled="false" 
+            look-controls id="cam" 
+            camera="zoom: 1" 
+            look-controls="reverseMouseDrag: true">
             <a-cursor raycaster="objects: .click, .info, .cavaButton"
-                geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.03"
-                material="color: #fff; side: double" ></a-cursor>
+                geometry="primitive: ring; radiusInner: 0.04; radiusOuter: 0.06"
+                material="color: #fff; transparent: true;opacity: .2 side: double">
+            </a-cursor>
         </a-camera>
         <!-- Texto -->
 
@@ -106,7 +112,7 @@
 
             <!-- Texto cava -->
 
-            <a-entity position="-3.3 0 -2.5" id="cava-container" >
+            <a-entity position=" -3.3 0 -2.5" rotation="0 0 0" id="cava-container">
                 <a-sphere radius=".5f" class="click" change-site="img: #cava; sound: #piano; scene: Cava"
                     visible="false">
                 </a-sphere>
@@ -219,7 +225,13 @@
             </a-plane>
 
             <!-- Flecha menu cava-->
-            <a-image class="arrowCava" position="-2.15 1.6 0" width="1" heigth=".5" scale=".5 .5 .5" src="#arrowCava"
+            <a-image 
+                class="arrowCava" 
+                position="-2.15 1.6 0" 
+                width="1" 
+                heigth=".5" 
+                scale=".5 .5 .5" 
+                src="#arrowCava"
                 visible="false">
             </a-image>
 
@@ -240,7 +252,13 @@
             </a-plane>
 
             <!-- Flecha menu cava-->
-            <a-image class="arrowCava" position="-2.15 1 0" width="1" heigth=".5" scale=".5 .5 .5" src="#arrowCava"
+            <a-image 
+                class="arrowCava" 
+                position="-2.15 1 0" 
+                width="1" 
+                heigth=".5" 
+                scale=".5 .5 .5" 
+                src="#arrowCava"
                 visible="false">
             </a-image>
 
@@ -261,7 +279,14 @@
             </a-plane>
 
             <!-- Flecha menu cava-->
-            <a-image class="arrowCava" position="-2.15 .4 -0.1" width="1" heigth=".5" scale=".5 .5 .5" src="#arrowCava" visible="false">
+            <a-image 
+                class="arrowCava" 
+                position="-2.15 .4 -0.1" 
+                width="1" 
+                heigth=".5" 
+                scale=".5 .5 .5" 
+                src="#arrowCava" 
+                visible="false">
             </a-image>
 
             <a-plane 

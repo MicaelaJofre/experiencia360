@@ -175,7 +175,6 @@ AFRAME.registerComponent('show-info', {
                     infoPanel.setAttribute('visible', 'false')
                     infoPanel.setAttribute('current', 'null')
                     
-                    
 
                     for (let i = 0; i < buttons.length; i++) {
                         const button = buttons[i];
