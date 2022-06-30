@@ -3,9 +3,12 @@ let windowOpen = document.querySelector('#windowOpen')
 let windowClose = document.querySelector('#windowClose')
 let containerModal = document.querySelector('#containerModal')
 let imag360 = document.querySelector("#imag360");
+let socialNetworks = document.querySelector('.socialNetworks')
+let iconsSocial = document.querySelector('.iconsSocial')
+let googlemaps = document.querySelector('.googlemaps')
+let maps = document.querySelector('.maps')
 
-
-
+//ventana modal
 windowOpen.addEventListener('click', () => {
     containerModal.classList.add("openModal")
 })
@@ -43,3 +46,13 @@ cavaImg.addEventListener('click', () => {
     })
 })
 
+//iconos de redes sociales
+
+socialNetworks.addEventListener('click', () => {
+    iconsSocial.classList.toggle("iconsSocialOpen")
+})
+
+//icono de google maps
+googlemaps.addEventListener('click', () => {
+    maps.classList.toggle("mapsOpen")
+})
