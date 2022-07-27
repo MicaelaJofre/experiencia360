@@ -228,21 +228,22 @@
 }
 .titleInfo{
     padding: .5em;
+    padding-left: 1em;
     font-size: .95em;
     width: 70vw;
     max-width: 21em;
     height: auto;
-    text-align: center;
+    margin-bottom: 0;
 }
 .textInfo{
     font-size: .9em;
     width: 70vw;
-    max-width: 20em;
+    max-width: 22em;
     height: 5em;
     overflow-y: scroll;
     scrollbar-color: #333 transparent;
     scrollbar-width: thin;
-    
+    margin-top: 0;
 }
 /*Webkit*/
 .textInfo::-webkit-scrollbar {
