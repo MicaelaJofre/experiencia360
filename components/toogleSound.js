@@ -19,10 +19,10 @@ function initialize() {
         let playingMusic = imag360.getAttribute("class", "playing-music")
 
         if (playingMusic) {
-            soundImg.src = "../img/volumenOff.png"
+            soundImg.src = "./img/volumenOff.png"
             imag360.components.sound.stopSound()
         } else {
-            soundImg.src = "../img/volumenGif.gif"
+            soundImg.src = "./img/volumenGif.gif"
             imag360.components.sound.playSound()
         }
 
